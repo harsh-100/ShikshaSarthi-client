@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { adminSignIn } from "../../../redux/actions/adminActions";
+
+import Spinner from "../../../utils/Spinner";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import Spinner from "../../../utils/Spinner";
+import { adminSignIn } from "../../../redux/actions/adminActions";
+import { useNavigate } from "react-router";
 
 const AdminLogin = () => {
   const [translate, setTranslate] = useState(false);
@@ -47,7 +48,8 @@ const AdminLogin = () => {
         <div
           className={`h-96 w-96 bg-white flex items-center justify-center ${
             translate ? "translate-x-[12rem]" : ""
-          }  duration-1000 transition-all rounded-3xl shadow-2xl`}>
+          }  duration-1000 transition-all rounded-3xl shadow-2xl`}
+        >
           <h1 className="text-[3rem]  font-bold text-center">
             Admin
             <br />
@@ -60,7 +62,8 @@ const AdminLogin = () => {
             loading ? "h-[27rem]" : "h-96"
           } w-96 bg-[#2c2f35] flex flex-col items-center justify-center ${
             translate ? "-translate-x-[12rem]" : ""
-          }  duration-1000 transition-all space-y-6 rounded-3xl shadow-2xl`}>
+          }  duration-1000 transition-all space-y-6 rounded-3xl shadow-2xl`}
+        >
           <h1 className="text-white text-3xl font-semibold">Admin</h1>
           <div className="space-y-1">
             <p className="text-[#515966] font-bold text-sm">Username</p>
@@ -101,7 +104,8 @@ const AdminLogin = () => {
           </div>
           <button
             type="submit"
-            className="w-32 hover:scale-105 transition-all duration-150 rounded-lg flex items-center justify-center text-white text-base py-1 bg-[#04bd7d]">
+            className="w-32 hover:scale-105 transition-all duration-150 rounded-lg flex items-center justify-center text-white text-base py-1 bg-[#04bd7d]"
+          >
             Login
           </button>
           {loading && (
